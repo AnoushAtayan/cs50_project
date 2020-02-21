@@ -1,0 +1,62 @@
+input:focus, input:hover {
+  box-shadow: 0 0 3px #09b9d6; }
+
+#login, #signup {
+  margin: 0;
+  padding: 0;
+  background-color: #09b9d6;
+  height: 100vh; }
+
+#id_login_box {
+  margin-top: 220px;
+  width: 450px;
+  max-width: 600px;
+  height: 420px;
+  border-radius: 7px;
+  background-color: #ffffff; }
+
+#id_sign_in_box {
+  margin-top: 200px;
+  width: 450px;
+  max-width: 600px;
+  height: 610px;
+  border-radius: 7px;
+  background-color: #ffffff; }
+
+#id_login_form, #id_sign_in_form {
+  margin-top: 20px;
+  padding: 30px; }
+
+.text-info:focus, .text-info:hover {
+  text-decoration: none; }
+
+.form-control:focus, .form-control:hover {
+  box-shadow: 0 0 3px #09b9d6 !important; }
+
+.btn-info {
+  background: #09b9d6;
+  border-color: #09b9d6;
+  width: 150px;
+  border-radius: 20px; }
+
+.btn-info:focus, .btn-info:hover {
+  color: white;
+  border-color: #09b9d6;
+  background: #3ad4ed; }
+
+.form-actions {
+  margin-top: 45px;
+  text-align: center; }
+
+#id_link_wrapper {
+  width: 100%;
+  margin: auto; }
+
+#id_forgot_link {
+  width: 50%;
+  float: left; }
+
+#id_register_link {
+  float: right; }
+
+/*# sourceMappingURL=custom.css.map */

@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %} | Sign Up {% endblock title %}
+
+{% block body %}
+<div id="signup">
+    <div class="container">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-md-5">
+                <div class="col-md-12" id="id_sign_in_box">
+                    <form class="form" id="id_sign_in_form" action="{% url 'signup' %}" method="post">
+                        {% csrf_token %}
+                        <h3 class="text-center text-info">Sign Up</h3>
+                        <div class="form-group">
+                            <label for="id_username" class="text-info">Username:</label><br>
+                            <input class="form-control" type="text" autocomplete="off" autofocus="" name="username" required id="id_username">
+                        </div>
+                        <div class="form-group">
+                            <label for="id_email" class="text-info">Email Address:</label><br>
+                            <input class="form-control" type="email" name="email" required id="id_email">
+                        </div>
+                        <div class="form-group">
+                            <label for="id_password1" class="text-info">Password:</label><br>
+                            <input class="form-control" type="password" name="password1" autocomplete="new-password" required id="id_password1">
+                        </div>
+                        <div class="form-group">
+                            <label for="id_password2" class="text-info">Password Confirmation:</label><br>
+                            <input class="form-control" type="password" name="password2" autocomplete="new-password" required id="id_password2">
+                        </div>
+                        {% if form.errors %}
+                        <p class="text-danger"><i class="fa fa-exclamation-triangle fa_custom fa-1x"></i><small>
+                            {% for v in form.errors.values %}
+                            {{ v | first}}
+                            {% endfor %}
+                        </small></p>
+                        {% endif %}
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-info">Sign Up</button>
+                        </div>
+                        <div class="text-center" id="id_login_link">
+                            <br>
+                            <a href="{% url 'login' %}" class="text-info">Already have an account?</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock body %}

@@ -10,3 +10,5 @@
 *tmp/
 *coverage
 *migrations/
+*.sqlite3
+*.scssc

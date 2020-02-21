@@ -26,9 +26,9 @@
                 <div class="dropdown-menu dropdown-menu-right dropdown-default" aria-labelledby="navbarDropdownMenuLink">
                     <a class="dropdown-item" href="#">Hello, {{ user.username }}!</a>
                     <hr>
-                    <a class="dropdown-item" href="#">Change password &nbsp;<i class="fas fa-key"></i></a>
+                    <a class="dropdown-item" href="{% url 'password_change' %}">Change password &nbsp;<i class="fas fa-key"></i></a>
                     <hr>
-                    <a class="dropdown-item" href="#">Logout&nbsp;<i class="fa fa-sign-out-alt"></i></a>
+                    <a class="dropdown-item" href="{% url 'logout' %}">Logout&nbsp;<i class="fa fa-sign-out-alt"></i></a>
                 </div>
             </li>
         </ul>

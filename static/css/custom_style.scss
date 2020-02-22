@@ -1,6 +1,7 @@
 $color: #09b9d6;
 $color_1: #1e2b7a;
 $color_2: #dcf4f8;
+$color_3: #717475;
 
 body {
   overflow: hidden; /* Hide scrollbars */
@@ -64,10 +65,6 @@ input:focus, input:hover {
 .main-content {
   background-color: $color_2;
   height: 75vh;
-}
-
-#id_dropzone_wrapper {
-  margin-top: 50px;
 }
 
 .user-auth {
@@ -178,6 +175,10 @@ input:focus, input:hover {
   float: right
 }
 
+#id_dropzone_wrapper {
+  margin: 55px 30px;
+}
+
 #id_dropzone_wrapper h1 {
   font-family: RalewayBold, Arial, Tahoma, sans-serif;
   font-size: 45px;
@@ -186,31 +187,55 @@ input:focus, input:hover {
   color: $color_1;
 }
 
-#id_dropzone_wrapper h2 {
+#id_dropzone_wrapper h2, h4 {
   color: $color;
 }
 
+.dropzone {
+  width: 50%;
+  height: 230px;
+  margin-left: 25%;
+  border-radius: 17px;
+  border: 1.1px dashed rgba(26,26,26,.3);
+  background-color: $color_2;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.img-block {
+  flex-shrink: 0;
+  margin-right: 30px;
+}
+
+.dropzone .dz-message {
+  margin: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+}
+
 .footer-social {
-    margin-top: 60px;
+  margin-top: 60px;
 }
 
 .footer-social ul li {
-    display: inline-block;
-    margin-right: 36px;
+  display: inline-block;
+  margin-right: 36px;
 }
 
 .footer-social ul li a i {
-    font-size: 24px;
-    color: black;
+  font-size: 24px;
+  color: black;
 }
 
 .footer-social ul li a i:hover {
-    color: $color;
+  color: $color;
 }
 
 .copyright {
-    margin-top: 26px;
-    font-family: 'Lucida', serif;
-    font-size: 12px;
-    color: #232323;
+  margin-top: 26px;
+  font-family: 'Lucida', serif;
+  font-size: 12px;
+  color: #232323;
 }

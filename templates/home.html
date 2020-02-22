@@ -8,17 +8,17 @@
     <div class="col-md-12">
         <h1 class=" text-center">Free Data Extraction Tool</h1>
         <h2 class="text-center">get data from images</h2>
-        <input type="file" name="document" id="tool-name" value="pdfextraction" required>
-        <div id="dzupload" class="dropzone dz-clickable">
-            <div class="dz-default dz-message">
-                <span><i class="fas fa-upload fa-3x"></i></span>
-                <div class="box_input">
-                    <label><strong>Choose a file</strong>
-                        <span class="box_dragndrop"> or drag it here</span>
-                    </label>
+        <form class="form" id="id_file_upload_form" action="" method="post" enctype="multipart/form-data">
+            <input type="hidden" name="document" id="id_document" required>
+            <div id="dzupload" class="dropzone dz-clickable">
+                <div class="dz-default dz-message">
+                    <div class="img-block"><img src="{% static 'images/upload.png' %}" alt="Upload file"></div>
+                    <div class="text">
+                        <h4>Select an image file or drag it here for further recognition</h4>
+                    </div>
                 </div>
             </div>
-        </div>
+        </form>
     </div>
 </div>
 

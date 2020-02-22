@@ -49,9 +49,6 @@ input:focus, input:hover {
   background-color: #dcf4f8;
   height: 75vh; }
 
-#id_dropzone_wrapper {
-  margin-top: 50px; }
-
 .user-auth {
   margin: 0;
   padding: 0;
@@ -140,6 +137,9 @@ input:focus, input:hover {
 #id_register_link {
   float: right; }
 
+#id_dropzone_wrapper {
+  margin: 55px 30px; }
+
 #id_dropzone_wrapper h1 {
   font-family: RalewayBold, Arial, Tahoma, sans-serif;
   font-size: 45px;
@@ -147,8 +147,29 @@ input:focus, input:hover {
   line-height: 1.04;
   color: #1e2b7a; }
 
-#id_dropzone_wrapper h2 {
+#id_dropzone_wrapper h2, h4 {
   color: #09b9d6; }
+
+.dropzone {
+  width: 50%;
+  height: 230px;
+  margin-left: 25%;
+  border-radius: 17px;
+  border: 1.1px dashed rgba(26, 26, 26, 0.3);
+  background-color: #dcf4f8;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
+
+.img-block {
+  flex-shrink: 0;
+  margin-right: 30px; }
+
+.dropzone .dz-message {
+  margin: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: left; }
 
 .footer-social {
   margin-top: 60px; }

@@ -12,3 +12,4 @@
 *migrations/
 *.sqlite3
 *.scssc
+/.env

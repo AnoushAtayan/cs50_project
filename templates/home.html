@@ -1,0 +1,25 @@
+{% extends "index.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="col-md-8" id="id_dropzone_wrapper">
+    <div class="col-md-12">
+        <h1 class=" text-center">Free Data Extraction Tool</h1>
+        <h2 class="text-center">get data from images</h2>
+        <input type="file" name="document" id="tool-name" value="pdfextraction" required>
+        <div id="dzupload" class="dropzone dz-clickable">
+            <div class="dz-default dz-message">
+                <span><i class="fas fa-upload fa-3x"></i></span>
+                <div class="box_input">
+                    <label><strong>Choose a file</strong>
+                        <span class="box_dragndrop"> or drag it here</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

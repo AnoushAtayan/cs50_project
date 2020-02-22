@@ -63,7 +63,11 @@ input:focus, input:hover {
 
 .main-content {
   background-color: $color_2;
-  height: 75vh;
+  height: 80vh;
+}
+
+#id_dropzone_wrapper {
+  margin-top: 50px;
 }
 
 .user-auth {
@@ -171,4 +175,16 @@ input:focus, input:hover {
 
 #id_register_link {
   float: right
+}
+
+#id_dropzone_wrapper h1 {
+  font-family: RalewayBold, Arial, Tahoma, sans-serif;
+  font-size: 45px;
+  font-weight: bold;
+  line-height: 1.04;
+  color: $color_1;
+}
+
+#id_dropzone_wrapper h2 {
+  color: $color;
 }

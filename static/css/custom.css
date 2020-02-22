@@ -47,7 +47,10 @@ input:focus, input:hover {
 
 .main-content {
   background-color: #dcf4f8;
-  height: 75vh; }
+  height: 80vh; }
+
+#id_dropzone_wrapper {
+  margin-top: 50px; }
 
 .user-auth {
   margin: 0;
@@ -135,5 +138,15 @@ input:focus, input:hover {
 
 #id_register_link {
   float: right; }
+
+#id_dropzone_wrapper h1 {
+  font-family: RalewayBold, Arial, Tahoma, sans-serif;
+  font-size: 45px;
+  font-weight: bold;
+  line-height: 1.04;
+  color: #1e2b7a; }
+
+#id_dropzone_wrapper h2 {
+  color: #09b9d6; }
 
 /*# sourceMappingURL=custom.css.map */

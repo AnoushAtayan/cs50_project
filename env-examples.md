@@ -1,0 +1,5 @@
+SECRET_KEY="key"
+
+EMAIL_HOST_USER="address"
+
+EMAIL_HOST_PASSWORD="password"

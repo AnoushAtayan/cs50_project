@@ -16,7 +16,7 @@ class SignUpView(CreateView):
 class FileUploadView(View):
     form_class = FileForm
     success_url = reverse_lazy('home')
-    template_name = 'file_upload.html'
+    template_name = 'home.html'
 
     def get(self, request):
         form = self.form_class()

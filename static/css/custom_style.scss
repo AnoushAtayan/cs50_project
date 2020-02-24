@@ -2,6 +2,7 @@ $color: #09b9d6;
 $color_1: #1e2b7a;
 $color_2: #dcf4f8;
 $color_3: #717475;
+$color_4: #e5322d;
 
 body {
   overflow: hidden; /* Hide scrollbars */
@@ -192,14 +193,43 @@ input:focus, input:hover {
 }
 
 .dropzone {
-  width: 50%;
+  width: 55%;
   height: 230px;
-  margin-left: 25%;
+  margin-left: 22.5%;
   margin-top: 40px;
   border-radius: 17px;
-  border: 1.1px dashed rgba(26,26,26,.3);
+  border: 1.1px dashed rgba(26, 26, 26, .3);
   background-color: $color_2;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.dropzone .dz-preview .dz-image {
+  border-radius: 0;
+}
+
+.dz-remove {
+  display: inline-block !important;
+  width: 1.2em;
+  height: 1.2em;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  z-index: 1000;
+  font-size: 1.2em !important;
+  line-height: 1em;
+  text-align: center;
+  font-weight: bold;
+  border: 1px solid gray !important;
+  border-radius: 1.2em;
+  color: gray;
+  background-color: white;
+  opacity: .5;
+}
+
+.dz-remove:hover {
+  text-decoration: none !important;
+  opacity: 1;
+  color: $color_4;
 }
 
 .img-block {
@@ -215,6 +245,47 @@ input:focus, input:hover {
   align-items: center;
   justify-content: center;
   text-align: left;
+}
+
+#id_limit .modal-body {
+  padding: 12px 26px 24px;
+}
+
+.modal-dialog.modal-center {
+  min-height: calc(90vh - 30px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: auto;
+}
+
+.modal-title {
+  margin-left: 3%;
+}
+
+#id_limit .modal-content {
+  width: 80%;
+}
+
+#id_limit .modal-title {
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 34px;
+  margin-bottom: 12px;
+  letter-spacing: 0;
+  color: $color_4;
+  text-align: left;
+}
+
+#id_extract_data {
+  display: none;
+  width: 300px;
+  min-height: 60px;
+  margin-top: 50px;
+  font-size: 28px;
+  line-height: 25px;
+  font-weight: 600;
+  box-shadow: 0 2px 8px 0 rgba(50, 50, 50, .3);
 }
 
 .footer-social {

@@ -12,4 +12,5 @@
 *migrations/
 *.sqlite3
 *.scssc
+*media/
 /.env

@@ -5,6 +5,7 @@ from django.views.generic.edit import CreateView
 
 from .forms import CustomUserCreationForm
 from .forms import FileForm
+from .helpers import get_file_paths
 
 
 class SignUpView(CreateView):
@@ -24,7 +25,6 @@ class FileUploadView(View):
 
     def post(self, request):
         form = self.form_class(request.POST, request.FILES)
-        if form.is_valid():
-            return redirect(self.success_url)
-        else:
-            return render(request, self.template_name, {'form': form})
+        img_paths, txt_paths = get_file_paths(form)
+        # fixme handle
+        return redirect(self.success_url)

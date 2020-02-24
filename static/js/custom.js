@@ -1,7 +1,6 @@
 function run_waitMe(effect) {
     $('body').waitMe({
         effect: effect,
-        text: 'Extracting',
         bg: 'rgba(255,255,255,0.7)',
         color: '#09b9d6',
     });

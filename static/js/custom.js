@@ -27,6 +27,7 @@ Dropzone.options.idDropzone = {
         submit_button.addEventListener("click", function () {
             dz.processQueue();
             run_waitMe("bounce");
+            $("#id_submit_form").click();
         });
         dz.on("addedfile", function (file) {
             $("#id_extract_data").show();

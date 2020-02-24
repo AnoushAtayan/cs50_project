@@ -10,15 +10,13 @@
         <h2 class="text-center">get data from images</h2>
         <form action="{% url 'home' %}" class="dropzone" method="post" id="id_dropzone" enctype="multipart/form-data">
             {% csrf_token %}
-            <div class="fallback">
-                <input name="file" type="file" multiple/>
-            </div>
             <div class="dz-default dz-message">
                 <div class="img-block"><img src="{% static 'images/upload.png' %}" alt="Upload file"></div>
                 <div class="text">
                     <h4>Select an image file or drag it here for further recognition</h4>
                 </div>
             </div>
+            <button type="submit" hidden id="id_submit_form"></button>
         </form>
         <div class="form-actions">
             <button type="button" class="btn btn-info" id="id_extract_data">Extract</button>

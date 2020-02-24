@@ -288,6 +288,56 @@ input:focus, input:hover {
   box-shadow: 0 2px 8px 0 rgba(50, 50, 50, .3);
 }
 
+.box {
+  margin-top: 100px;
+  position: relative;
+}
+
+.download-title {
+  font-weight: 400;
+  letter-spacing: 0;
+  color: $color_1;
+  max-width: 800px;
+  text-align: center;
+  margin: 30px auto;
+}
+
+.download-wrapper {
+  text-align: center;
+  position: relative;
+}
+
+.fa-arrow-alt-circle-left {
+  margin-top: 30px;
+  font-size: 2.7em;
+  color: $color_1;
+}
+
+.fa-arrow-alt-circle-left:hover {
+  color: $color;
+}
+
+.download-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 80px;
+  background: $color;
+  padding: 24px 56px;
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 32px;
+  color: #fff;
+  border-radius: 7px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.download-btn:hover, .download-btn:focus {
+  color: #fff;
+  background: $color_1;
+  text-decoration: none;
+}
+
 .footer-social {
   margin-top: 60px;
 }

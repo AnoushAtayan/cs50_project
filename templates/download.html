@@ -1,0 +1,35 @@
+{% extends "index.html" %}
+
+{% load static %}
+
+{% block content %}
+
+{% if success %}
+<div class="box">
+    <h1 class="download-title">{{ success }}</h1>
+    <div class="download-wrapper">
+        <a class="download-btn" href="{{ file_name }}"> <span> <i
+                class="fas fa-download"></i></span>&nbsp Download extracted data</a>
+        <div class="link-to-home">
+            <a href="{% url 'home' %}">
+                <span><i class="fas fa-arrow-alt-circle-left" data-toggle="tooltip"
+                         data-placement="top" title="Back to Home Page"></i></span>
+            </a>
+        </div>
+    </div>
+</div>
+{% else %}
+<div class="box">
+    <h1 class="download-title">{{ error }}</h1>
+    <div class="download-wrapper">
+        <div class="link-to-home">
+            <a href="{% url 'home' %}">
+                <span><i class="fas fa-arrow-alt-circle-left" data-toggle="tooltip"
+                         data-placement="top" title="Back to Home Page"></i></span>
+            </a>
+        </div>
+    </div>
+</div>
+{% endif %}
+
+{% endblock content %}

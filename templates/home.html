@@ -1,0 +1,44 @@
+{% extends "index.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="col-md-8" id="id_dropzone_wrapper">
+    <div class="col-md-12">
+        <h1 class=" text-center">Free Data Extraction Tool</h1>
+        <h2 class="text-center">get data from images</h2>
+        <form action="{% url 'home' %}" class="dropzone" method="post" id="id_dropzone" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="dz-default dz-message">
+                <div class="img-block"><img src="{% static 'images/upload.png' %}" alt="Upload file"></div>
+                <div class="text">
+                    <h4>Select an image file or drag it here for further recognition</h4>
+                </div>
+            </div>
+            <button type="submit" hidden id="id_submit_form"></button>
+        </form>
+        <div class="form-actions">
+            <button type="button" class="btn btn-info" id="id_extract_data">Extract</button>
+        </div>
+    </div>
+</div>
+
+<!-- Alert message during file upload -->
+<div class="modal" id="id_limit" tabindex="-1" role="dialog" aria-modal="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header"><h4 class="modal-title">File uploading error</h4>
+                <button type="button" class="close" id="closeAlert" data-dismiss="modal"
+                        aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" id="id_message">
+                <br>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

@@ -6,7 +6,7 @@
 
 <!--Navbar -->
 <nav class="navbar navbar-expand-lg navbar-light custom-navbar">
-    <a class="navbar-brand" href="{% url 'index' %}"><img src="{% static 'images/logo3.png' %}"></a>
+    <a class="navbar-brand" href="{% url 'home' %}"><img src="{% static 'images/logo3.png' %}"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#id_nav_content"
             aria-controls="id_nav_content" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -26,7 +26,7 @@
                 <div class="dropdown-menu dropdown-menu-right dropdown-default" aria-labelledby="id_nav_dropdown_menu_link">
                     <a class="dropdown-item" href="#">Hello, {{ user.username }}!</a>
                     <hr>
-                    <a class="dropdown-item" href="{% url 'password_change' %}">Change password &nbsp;<i class="fas fa-key"></i></a>
+                    <a class="dropdown-item" href="{% url 'password_change' %}">Change password &nbsp;<i class="fa fa-lock"></i></a>
                     <hr>
                     <a class="dropdown-item" href="{% url 'logout' %}">Logout&nbsp;<i class="fa fa-sign-out-alt"></i></a>
                 </div>
@@ -42,5 +42,24 @@
             {% endblock content %}
         </div>
     </div>
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col text-center">
+                    <div class="footer-social">
+                        <ul>
+                            <li><a href="https://www.facebook.com/profile.php?id=100004615263616"><i class="fab fa-facebook-f" aria-hidden="true"></i></a></li>
+                            <li><a href="https://www.linkedin.com/in/anoush-atayan-080b4b142/"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a></li>
+                            <li><a href="https://github.com/AnoushAtayan"><i class="fab fa-github"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="copyright">Copyright &copy
+                        <script>document.write(new Date().getFullYear());</script>
+                        All rights reserved
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
 </div>
 {% endblock body %}

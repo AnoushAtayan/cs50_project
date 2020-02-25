@@ -36,7 +36,7 @@ class FileUploadView(View):
         return redirect('download')
 
 
-def download_page(request: HttpRequest) -> HttpResponse or None:
+def download_page(request: HttpRequest) -> HttpResponse:
     """Render download page."""
     path = request.session.get('zip_path')
     if not path:

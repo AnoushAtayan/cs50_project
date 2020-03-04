@@ -11,7 +11,7 @@ from django.views.generic.edit import CreateView
 
 from .forms import CustomUserCreationForm
 from .forms import FileForm
-from .helpers import parse_files
+from .helpers import parse_files, clear_user_folder
 
 
 class SignUpView(CreateView):
@@ -25,6 +25,7 @@ class FileUploadView(View):
     template_name = 'home.html'
 
     def get(self, request):
+        clear_user_folder(request.user.username)
         form = self.form_class()
         return render(request, self.template_name, {'form': form})
 

@@ -288,6 +288,10 @@ input:focus, input:hover {
   box-shadow: 0 2px 8px 0 rgba(50, 50, 50, .3);
 }
 
+#id_hidden {
+  display: none;
+}
+
 .box {
   margin-top: 100px;
   position: relative;

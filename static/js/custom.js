@@ -6,6 +6,15 @@ function run_waitMe(effect) {
     });
 }
 
+// Used for creating a new FileList object (input files which is used in django views is type of FileList).
+function FileListItem(a) {
+    a = [].slice.call(Array.isArray(a) ? a : arguments);
+    for (var c, b = c = a.length, d = !0; b-- && d;) d = a[b] instanceof File
+    if (!d) throw new TypeError("expected argument to FileList is File or array of File objects")
+    for (b = (new ClipboardEvent("")).clipboardData || new DataTransfer; c--;) b.items.add(a[c])
+    return b.files
+}
+
 Dropzone.options.idDropzone = {
     maxFilesize: 10, // MB
     thumbnailMethod: "contain",
@@ -14,6 +23,7 @@ Dropzone.options.idDropzone = {
     uploadMultiple: true,
     addRemoveLinks: true,
     autoProcessQueue: false,
+    autoDiscover: false,
 
     error: function (file, message, xhr) {
         if (xhr == null) this.removeFile(file);
@@ -25,7 +35,7 @@ Dropzone.options.idDropzone = {
         var submit_button = document.querySelector("#id_extract_data");
         var dz = this;
         submit_button.addEventListener("click", function () {
-            dz.processQueue();
+            document.getElementById('id_hidden').files = FileListItem(dz.getQueuedFiles());
             run_waitMe("bounce");
             $("#id_submit_form").click();
         });

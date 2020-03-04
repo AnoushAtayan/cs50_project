@@ -20,6 +20,12 @@ def img_to_txt(img_path: str, txt_path: str) -> str:
     return txt_path
 
 
+def clear_user_folder(username: str):
+    folder_name = Path(MEDIA_ROOT).joinpath(username)
+    for f in folder_name.iterdir():
+        f.unlink()
+
+
 def parse_files(form: FileForm, username: str) -> str:
     """Helper function for saving uploaded files, parsing them and creating zip file from them."""
     folder_name = Path(MEDIA_ROOT).joinpath(username)

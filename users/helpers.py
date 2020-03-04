@@ -28,7 +28,7 @@ def parse_files(form: FileForm, username: str) -> str:
     fs = FileSystemStorage(location=folder_name)
 
     with zipfile.ZipFile(zip_file_path, 'w') as zip_file:
-        for f in form.files.values():
+        for f in form.files.getlist('file'):
             name = fs.save(Path(f.name).name, f)
             path = Path(unquote(fs.url(name)))
             suffix = path.suffix

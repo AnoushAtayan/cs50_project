@@ -11,7 +11,7 @@ from django.views.generic.edit import CreateView
 
 from .forms import CustomUserCreationForm
 from .forms import FileForm
-from .helpers import get_file_paths
+from .helpers import parse_files
 
 
 class SignUpView(CreateView):
@@ -30,9 +30,7 @@ class FileUploadView(View):
 
     def post(self, request):
         form = self.form_class(request.POST, request.FILES)
-        img_paths, txt_paths = get_file_paths(form)
-        # fixme handle
-        # request.session['zip_path'] = '/home/anoush/Desktop/js-test.zip'
+        request.session['zip_path'] = parse_files(form, request.user.username)
         return redirect('download')
 
 
@@ -48,7 +46,7 @@ def download_page(request: HttpRequest) -> HttpResponse:
     return TemplateResponse(request, 'download.html', context)
 
 
-def download_csv(request: HttpRequest) -> HttpResponse:
+def download_text_file(request: HttpRequest) -> HttpResponse:
     """
     Downloads the extracted csv file.
     :param request: HttpRequest

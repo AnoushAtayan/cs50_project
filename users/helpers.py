@@ -1,5 +1,6 @@
+import zipfile
+from os.path import basename
 from pathlib import Path
-from typing import List, Tuple
 from urllib.parse import unquote
 
 import pytesseract
@@ -10,25 +11,29 @@ from img2txt.settings import MEDIA_ROOT
 from .forms import FileForm
 
 
-def get_file_paths(form: FileForm) -> Tuple[List, List]:
-    """Helper function for saving uploaded files and returning paths."""
-    img_paths = []
-    txt_paths = []
-    fs = FileSystemStorage()
-
-    for f in form.files.values():
-        name = fs.save(Path(f.name).name, f)
-        path = Path(unquote(fs.url(name)))
-        suffix = path.suffix
-        absolute_path = Path(MEDIA_ROOT).joinpath(path.stem)
-        img_paths.append(str(absolute_path.with_suffix(suffix)))
-        txt_paths.append(str(absolute_path.with_suffix('.txt')))
-    return img_paths, txt_paths
-
-
-def img_to_txt(img_path: str, txt_path: str):
+def img_to_txt(img_path: str, txt_path: str) -> str:
     """Read image and save text in .txt format"""
     with Image.open(img_path) as img:
         text = pytesseract.image_to_string(img)
         with open(txt_path, 'w') as txt:
             txt.write(text)
+    return txt_path
+
+
+def parse_files(form: FileForm, username: str) -> str:
+    """Helper function for saving uploaded files, parsing them and creating zip file from them."""
+    folder_name = Path(MEDIA_ROOT).joinpath(username)
+    zip_file_path = folder_name.joinpath('output.zip')
+    folder_name.mkdir(exist_ok=True, parents=True)
+    fs = FileSystemStorage(location=folder_name)
+
+    with zipfile.ZipFile(zip_file_path, 'w') as zip_file:
+        for f in form.files.values():
+            name = fs.save(Path(f.name).name, f)
+            path = Path(unquote(fs.url(name)))
+            suffix = path.suffix
+            absolute_path = folder_name.joinpath(path.stem)
+            txt_path = img_to_txt(
+                str(absolute_path.with_suffix(suffix)), str(absolute_path.with_suffix('.txt')))
+            zip_file.write(txt_path, arcname=basename(txt_path))
+    return str(zip_file_path)

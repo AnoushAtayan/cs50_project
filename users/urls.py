@@ -7,6 +7,6 @@ urlpatterns = [
     path('', login_required(
         FileUploadView.as_view(), login_url='users/login/'), name='home'),
     path('download/', download_page, name='download'),
-    re_path('^download/.*zip/$', download_text_file, name='download_csv'),
+    re_path('^download/.*zip/$', download_text_file, name='download_zip'),
     path('signup/', SignUpView.as_view(), name='signup'),
 ]

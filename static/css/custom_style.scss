@@ -342,6 +342,57 @@ input:focus, input:hover {
   text-decoration: none;
 }
 
+#id_about_box {
+  margin-top: 50px;
+}
+
+#id_about_box h2 {
+  color: $color_1;
+  font-weight: bold;
+}
+
+#id_author_title {
+  margin: 30px 0;
+  text-align: center;
+}
+
+#id_author_title h4 {
+  color: black;
+}
+
+.user-image {
+  width: 200px;
+  height: 200px;
+  margin-bottom: 1.6rem;
+  overflow: hidden;
+  border-radius: 50%;
+  margin: 0 auto 2rem auto;
+}
+
+.user-image img {
+  width: 100%;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.author-name {
+  text-align: center;
+  font-family: 'Rubik', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  padding-bottom: .5rem!important;
+  color: black;
+}
+
+.author-prof {
+  text-align: center;
+  font-family: 'Rubik', sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+  padding-bottom: .5rem!important;
+  color: black;
+}
+
 .footer-social {
   margin-top: 60px;
 }

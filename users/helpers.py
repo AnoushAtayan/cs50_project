@@ -21,9 +21,11 @@ def img_to_txt(img_path: str, txt_path: str) -> str:
 
 
 def clear_user_folder(username: str):
+    """Clear media folder of specific user."""
     folder_name = Path(MEDIA_ROOT).joinpath(username)
-    for f in folder_name.iterdir():
-        f.unlink()
+    if Path.exists(folder_name):
+        for f in folder_name.iterdir():
+            f.unlink()
 
 
 def parse_files(form: FileForm, username: str) -> str:

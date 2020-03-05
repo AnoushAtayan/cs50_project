@@ -8,7 +8,5 @@ urlpatterns = [
     path('', include('users.urls')),
     path('about', login_required(
         TemplateView.as_view(template_name='about.html'), login_url='users/login/'), name='about'),
-    path('help', login_required(
-        TemplateView.as_view(template_name='help.html'), login_url='users/login/'), name='help'),
     path('users/', include('django.contrib.auth.urls')),
 ]

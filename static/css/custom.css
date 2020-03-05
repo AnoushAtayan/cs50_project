@@ -297,7 +297,6 @@ input:focus, input:hover {
 .user-image {
   width: 200px;
   height: 200px;
-  margin-bottom: 1.6rem;
   overflow: hidden;
   border-radius: 50%;
   margin: 0 auto 2rem auto; }
@@ -312,7 +311,7 @@ input:focus, input:hover {
   font-family: 'Rubik', sans-serif;
   font-size: 1rem;
   font-weight: 700;
-  padding-bottom: 0.5rem !important;
+  padding-bottom: .5rem !important;
   color: black; }
 
 .author-prof {
@@ -320,7 +319,7 @@ input:focus, input:hover {
   font-family: 'Rubik', sans-serif;
   font-size: 1rem;
   font-weight: 300;
-  padding-bottom: 0.5rem !important;
+  padding-bottom: .5rem !important;
   color: black; }
 
 .footer-social {

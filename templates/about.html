@@ -1,0 +1,35 @@
+{% extends "index.html" %}
+
+{% load static %}
+
+{% block title %} | About {% endblock title %}
+
+{% block content %}
+
+
+<div class="container">
+    <div class="row justify-content-center align-items-center">
+        <div class="col-md-8">
+            <div class="col-md-12" id="id_about_box">
+                <h2 class="text-center text-header">This is CS50's Final Project</h2>
+                <h4 class="text-center text-header"> This is free and easy used text extraction tool</h4>
+            </div>
+        </div>
+        <div class="user col-md-8">
+            <div class="col-md-12" id="id_author_title">
+                <h4>Author</h4>
+            </div>
+            <div class="user-image">
+                <img src="{% static 'images/author.jpg' %}" alt="author">
+            </div>
+            <div class="author-name">
+                Anoush
+            </div>
+            <div class="author-prof">
+                PYTHON DEVELOPER
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
